@@ -1,0 +1,23 @@
+{
+  "name": "opticaycristal.cl",
+  "version": "1.0.0",
+  "description": "tienda online",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Soyalfredohurtado/opticaycristal.cl.git"
+  },
+  "author": "alfredocl2016@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Soyalfredohurtado/opticaycristal.cl/issues"
+  },
+  "homepage": "https://github.com/Soyalfredohurtado/opticaycristal.cl#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2"
+  }
+}
