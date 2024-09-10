@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+    <!-- heade -->
+    <%- include('template/head.ejs') %>
+<body>
+    <%- include('template/nav.ejs') %>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow" style="width: 500px;">
+                    <div class="card-header bg-success text-white">
+                        <h3>Nuevo Producto</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="" method="post">
+                            <div class="mb-3">
+                                <label for="productId" class="form-label">Código Único</label>
+                                <input type="text" name="productId" id="productId" class="form-control" required>
+                            </div>
+    
+                            <div class="mb-3">
+                                <label for="productoCategory" class="form-label">Categoría</label>
+                                <select name="productoCategory" id="productoCategory" class="form-select" required>
+                                    <option value="">Todos</option>
+                                    <option value="niños">Niños</option>
+                                    <option value="jóvenes">Jóvenes</option>
+                                    <option value="hombre">Hombre</option>
+                                    <option value="mujer">Mujer</option>
+                                </select>
+                            </div>
+    
+                            <div class="mb-3">
+                                <label for="productName" class="form-label">Nombre</label>
+                                <input type="text" name="productName" id="productName" class="form-control" required>
+                            </div>
+    
+                            <div class="mb-3">
+                                <label for="productPrice" class="form-label">Precio</label>
+                                <input type="text" name="productPrice" id="productPrice" class="form-control" required>
+                            </div>
+    
+                            <div class="mb-3">
+                                <label for="productImg" class="form-label">Imagen</label>
+                                <input type="file" name="productImg" id="productImg" class="form-control" required>
+                            </div>
+    
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+
+    <!-- scripts generales -->
+    <%- include('template/scripts.ejs') %>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+    <!-- heade -->
+    <%- include('template/head.ejs') %>
+<body>
+    <div class="row align-items-center g-lg-5 py-5">
+        <div class="col-md-10 mx-auto col-lg-5 border rounded-3 bg-body-tertiary shadow shadow-sm">
+            <form class="p-4" action="/admin" method="POST">
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" name="userEmail" placeholder="name@example.com" required>
+                    <label for="floatingInput">Correo Electrónico</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="floatingPassword" name="userPassword" placeholder="Password" required>
+                    <label for="floatingPassword">Contraseña</label>
+                </div>
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar sesión</button>
+                <a class="w-100 btn btn-lg btn-outline-primary mt-1" href="/usuarios/registrar-usuario">Registrar</a>
+            </form>
+        </div>
+    </div>
+    <!-- scripts generales -->
+    <%- include('template/scripts.ejs') %>
+</body>
+</html>

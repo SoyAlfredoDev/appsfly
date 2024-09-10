@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img src="/img/logo-principal.png" id="logo-principal-nav" alt="logo principal óptica y cristal">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link <%if(view === 'inicio') {%> active <%}%>" <%if(view === 'inicio') {%> style="color: #ac1928;" <%}%> aria-current="page" href="/">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <%if(view === 'productos') {%> active <%}%>" href="/productos" <%if(view === 'productos') {%> style="color: #ac1928;" <%}%>>Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <%if(view === 'contacto') {%> active <%}%>" href="#" <%if(view === 'contactos') {%> style="color: #ac1928;" <%}%>>Contactos</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

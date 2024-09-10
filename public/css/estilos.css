@@ -1,0 +1,284 @@
+/* variables */
+:root {
+    --colorPrincipal: #ac1928;
+    --borderGeneral: 17px;
+    --colorAmarillo: #FFC107;
+    --colorGrisFondo: #fafafa;
+}
+
+/* ---*/
+*{
+    font-family: "Noto Sans", sans-serif;
+}
+
+a {
+    text-decoration: none; /* Elimina el subrayado */
+    color: inherit; /* Toma el color del texto padre o define un color específico */
+}
+
+body{
+    margin-top: 60px;
+    background-color: var(--colorGrisFondo);
+}
+/* --------------------- NAV -----------------------*/
+
+#logo-principal-nav{
+    max-width: 230px;
+    margin-left: 3%;
+}
+
+.nav-link{
+    color: var(--colorPrincipal);
+}
+
+/* --------------------- BOX FRASE INICIAL ----------------------- */
+.box-frase-inicial{
+background-color: var(--colorGrisFondo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+.frase-inicial-img{
+  
+    min-height: 300px;
+
+}
+.div-frase-inicial{
+    padding: 10px;
+
+}
+
+.frase-inicial{
+    font-family: 'Dancing Script', cursive;
+    font-size: 5.7rem; /* Ajusta según tu diseño */
+    color:var(--colorPrincipal);  /* Usa el color de tu diseño */
+    text-align: center ;
+    
+    letter-spacing: 1px; /* Ajuste opcional para el espaciado */
+    line-height:0.8;
+}
+
+.imagen-cliente-feliz{
+    width: 100%;
+}
+
+/*----------------------------- BOTONES ----------------------------------- */
+.btn-1 {
+    background-color: var(--colorPrincipal);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.btn-1:hover {
+    background-color: var(--colorAmarillo);
+    color: #000;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+
+
+/* --------------------- BOX PRODUCTOS RECOMENDADOS ----------------------- */
+.box-recomendados{
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+
+}
+.recomkendado{
+    background-color: #fff;
+}
+.recomendado-img{
+    width: 96%;
+}
+.recomendado-img:hover{
+    width: 100%;
+}
+.recomendado-p{
+    text-align: center;
+}
+/*------------------------------ BOX CARACTERISTICAS-------------------------*/
+.caracteristicas-marcos{
+    height: 300px;
+    background-color: #e107cb;
+}
+.caracteristicas-cristales{
+    height: 300px;
+    background-color: #1cab23;
+}
+
+/* ---------------------------- FOOTER ---------------------------------------*/
+footer{
+    background-color: var(--colorPrincipal);
+    height: 50px;
+    margin-block: 30px;
+}
+
+footer a{
+    color: #fff;
+}
+
+footer i{
+   font-size: 1rem;
+   margin: 3px;
+}
+
+/*-------------------------- ICONOS WHATSAPP --------------------------------*/
+.icono-whatsapp{
+    width: 60px;
+}
+
+/* view Productos */
+.price-1{
+    color: rgb(138, 138, 138);
+    font-size: 0.9em;
+}
+
+.price-2{
+    color: var(--colorPrincipal);
+    font-size: 1.1em;
+    margin-left: 5px;
+}
+
+/**/
+.box-categoria-producto{
+    background-color: #fff;
+    padding: 10px;
+    padding-top: 30px;
+    font-size: 1.3rem;
+}
+
+.box-categoria-producto li{
+    color: #444444;
+}
+
+.box-categoria-producto li:hover{
+    color: var(--colorPrincipal);
+
+}
+
+/* -----------------------  sesión cinta de marcas  --------------------------------- */
+.box-marcas-cinta {
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+    padding-inline: 10px;
+    position: relative;
+}
+
+.box-marcas-cinta-contenido {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: max-content;
+    animation: mover 900s linear infinite;
+}
+.logo-marca{
+    width: 120px;
+    height: auto;
+    margin-right: 60px;
+    
+}
+@keyframes mover {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+
+
+/*------------------------------ tipo de vision ---------------------------------*/
+.box-tipo-vision{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.tipo-vision{
+    background-color: #fff;
+    margin-inline: 10px;
+    border: 1px solid rgb(218, 218, 218);
+}
+
+.box-tipo-vision-row{
+    display: flex;
+    justify-content: space-around;
+}
+
+.card-header-tipo{
+    background: var(--colorPrincipal);
+    color: #fff;
+}
+
+ul{
+    list-style-type: none;
+}
+
+/*--------------------------------------------------------------------*/
+.centrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*------------------------------ sesión: Contacto con Mapa ---------------------------*/
+
+.section-contacto{
+    background-color: var(--colorPrincipal);
+}
+.div-map{
+    padding: 10px 20px;
+}
+#map{
+    height: 300px;
+   
+}
+.section-contacto span{
+    color: #fff;
+    margin-left: 20px;
+    font-size: 1.8rem;
+}
+
+.section-contacto-dl dt{
+    color: var(--colorAmarillo);
+}
+.section-contacto-dl{
+    margin: 20px 0px;
+
+}
+
+.section-contacto-dl dd{
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+/* -------------------------------                                 -------------------------------------------------------*/
+
+strong, .icono{
+    color: var(--colorPrincipal);
+}
+
+
+/*
+.noto-sans-<uniquifier> {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+*/

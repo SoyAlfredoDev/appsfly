@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+    <!-- heade -->
+    <%- include('template/head.ejs') %>
+<body>
+    <%- include('template/nav.ejs') %>
+    <div class="container pt-2">
+        <div class="row">
+            <div class="col-3"> <a class="btn btn-success" href="/admin/producto-nuevo"> + Agregar Producto</a></div>
+            <div class="col-9 text-end"><h1> Administración de contenido: Prodúctos </h1></div>
+        </div>
+        
+        <div class="table-responsive">        
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Precio</th> 
+                        <th>Staus</th>
+                        <th>Acciones</th>                       
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>m-003</td>
+                        <td>Mocatto </td>
+                        <td>Lente optico para jovenes </td>
+                        <td>19.990</td>
+                        <td>disponible </td>
+                        <td> 
+                            <button class="btn text-danger">-</button>
+                            <button class="btn text-success">+</button>
+                        </td>
+                    </tr>  
+                </tbody>
+            </table>          
+        </div>
+    </div>
+
+
+
+    <!-- scripts generales -->
+    <%- include('template/scripts.ejs') %>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+    <!-- heade -->
+    <%- include('template/head.ejs') %>
+<body>
+    <%- include('template/nav.ejs') %>
+    <div class="box-frase-inicial row">
+        <div class="col-md-7 div-frase-inicial">
+            <h1 class="frase-inicial">
+                Llegó tu momento de ver mejor la vida
+            </h1>   
+        </div>
+        <div class="col-md-5 frase-inicial-img">
+            <img src="./img/cliente-feliz-2.jpg" alt="imagen-cliente-feliz" class="imagen-cliente-feliz">
+        </div>
+    </div>
+    <div class="d-none d-sm-block">        
+        <div class="box-recomendados">
+            <div class="recomendado">
+                <img  class="recomendado-img" src="/img/modelos-recomendados/lente-recomendado-1.jpg" alt="">
+                <p class="recomendado-p">TR90</p>
+            </div>
+            <div class="recomendado">
+                <img  class="recomendado-img" src="/img/modelos-recomendados/lente-recomendado-1.jpg" alt="">
+                <p class="recomendado-p">Mocatto </p>
+            </div>
+            <div class="recomendado">
+                <img  class="recomendado-img" src="/img/modelos-recomendados/lente-recomendado-2.jpg" alt="">
+                <p class="recomendado-p">Bellagio</p>
+            </div>
+            <div class="recomendado">
+                <img  class="recomendado-img" src="/img/modelos-recomendados/lente-recomendado-1.jpg" alt="">
+                <p class="recomendado-p">alterna </p>
+            </div>                
+        </div>
+    </div>
+
+    <div class="d-block d-sm-none">
+        <div class="box-recomendados-carrusel">
+            <div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="/img/modelos-recomendados/lente-recomendado-1.jpg" class="d-block w-100" alt="lente-recomendado-1">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/img/modelos-recomendados/lente-recomendado-2.jpg" class="d-block w-100" alt="lente-recomendado-2">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/img/modelos-recomendados/lente-recomendado-3.jpg" class="d-block w-100" alt="lente-recomendado-3">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                  <span class="carousel-control-next-icon text-dark" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </div>        
+    </div>
+
+    <div class="row p-3">
+        <div class="text-center">
+            <button class="btn-1">Ver nuestro catalogo</button> 
+        </div>
+    </div> 
+
+    <div class="box-caracteristicas row">
+        <div class="col-md-6 col-lg-7 caracteristicas-marcos">
+            caracteristicas-marcos
+        </div>
+        <div class="col-md-6 col-lg-5 p-0 m-0 caracteristicas-cristales">
+            <div class="row h-100">
+                <!-- Cuadro 1 -->
+                <div class="col-6 d-flex justify-content-center align-items-center bg-light p-0" style="height: 50%;">
+                    <div class="d-block p-3">
+                        <div class="text-center mt-3">
+                            <i class="fa-solid fa-user-doctor h1 icono" aria-hidden="true"></i>
+                        </div>
+                        <div class="text-center">
+                            <strong>Consulta Visual Gratuita</strong>
+                        </div>       
+                    </div>
+                </div>
+                <!-- Cuadro 2 -->
+                <div class="col-6 d-flex justify-content-center align-items-center bg-white p-0" style="height: 50%;">
+                    <div class="d-block">
+                        <div class="text-center mt-3">
+                            <i class="fa-solid fa-award h1 icono"  aria-hidden="true"></i>
+                        </div>
+                        <div class="text-center">
+                            <strong>Garantía hasta de 1 año</strong>
+                        </div>       
+                    </div>
+                </div>                
+                <!-- Cuadro 3 -->
+                <div class="col-6 d-flex justify-content-center align-items-center bg-white p-0" style="height: 50%;">
+                    <div class="d-block">
+                        <div class="text-center mt-3">
+                            <i class="fa-solid fa-paper-plane h1 icono" aria-hidden="true"></i> 
+                        </div>
+                        <div class="text-center">
+                            <strong>Envío a todo Chile</strong>
+                        </div>       
+                    </div>
+                </div> 
+                <!-- Cuadro 4 -->
+                <div class="col-6 d-flex justify-content-center align-items-center bg-light p-0" style="height: 50%;">
+                    <div class="d-block">
+                        <div class="text-center mt-3">
+                            <i class="fa-solid fa-person h1 iconoa" aria-hidden="true"></i>
+                        </div>
+                        <div class="text-center">
+                            <strong>Atención Personalizada</strong>
+                        </div>       
+                    </div>
+                </div>    
+            </div> 
+        </div>
+    </div>
+
+    <%- include('section/tipo-vision.ejs') %>    
+
+    <div class="box-marcas-cinta">
+        <div class="box-marcas-cinta-contenido">
+            <img class="logo-marca" src="./img/logo-marcas/logo_nike.jpg" alt="logo_nike">
+            <img class="logo-marca" src="./img/logo-marcas/logo_mocatto.png" alt="logo_mocatto">
+            <img class="logo-marca" src="./img/logo-marcas/logo_converse.png" alt="logo_converse">
+            <img class="logo-marca" src="./img/logo-marcas/logo_ray_ban.png" alt="logo Ray Ban">
+            <img class="logo-marca" src="./img/logo-marcas/logo_nike.jpg" alt="logo_nike">
+            <img class="logo-marca" src="./img/logo-marcas/logo_mocatto.png" alt="logo_mocatto">
+            <img class="logo-marca" src="./img/logo-marcas/logo_converse.png" alt="logo_converse">
+            <img class="logo-marca" src="./img/logo-marcas/logo_ray_ban.png" alt="logo Ray Ban">
+            <img class="logo-marca" src="./img/logo-marcas/logo_nike.jpg" alt="logo_nike">
+            <img class="logo-marca" src="./img/logo-marcas/logo_mocatto.png" alt="logo_mocatto">
+            <img class="logo-marca" src="./img/logo-marcas/logo_converse.png" alt="logo_converse">
+            <img class="logo-marca" src="./img/logo-marcas/logo_ray_ban.png" alt="logo Ray Ban">
+            <img class="logo-marca" src="./img/logo-marcas/logo_nike.jpg" alt="logo_nike">
+            <img class="logo-marca" src="./img/logo-marcas/logo_mocatto.png" alt="logo_mocatto">
+            <img class="logo-marca" src="./img/logo-marcas/logo_converse.png" alt="logo_converse">
+            <img class="logo-marca" src="./img/logo-marcas/logo_ray_ban.png" alt="logo Ray Ban">
+            <img class="logo-marca" src="./img/logo-marcas/logo_nike.jpg" alt="logo_nike">
+            <img class="logo-marca" src="./img/logo-marcas/logo_mocatto.png" alt="logo_mocatto">
+            <img class="logo-marca" src="./img/logo-marcas/logo_converse.png" alt="logo_converse">
+            <img class="logo-marca" src="./img/logo-marcas/logo_ray_ban.png" alt="logo Ray Ban">
+            <img class="logo-marca" src="./img/logo-marcas/logo_nike.jpg" alt="logo_nike">
+            <img class="logo-marca" src="./img/logo-marcas/logo_mocatto.png" alt="logo_mocatto">
+            <img class="logo-marca" src="./img/logo-marcas/logo_converse.png" alt="logo_converse">
+            <img class="logo-marca" src="./img/logo-marcas/logo_ray_ban.png" alt="logo Ray Ban">
+            <img class="logo-marca" src="./img/logo-marcas/logo_nike.jpg" alt="logo_nike">
+            <img class="logo-marca" src="./img/logo-marcas/logo_mocatto.png" alt="logo_mocatto">
+            <img class="logo-marca" src="./img/logo-marcas/logo_converse.png" alt="logo_converse">
+            <img class="logo-marca" src="./img/logo-marcas/logo_ray_ban.png" alt="logo Ray Ban">
+            <img class="logo-marca" src="./img/logo-marcas/logo_nike.jpg" alt="logo_nike">
+            <img class="logo-marca" src="./img/logo-marcas/logo_mocatto.png" alt="logo_mocatto">
+            <img class="logo-marca" src="./img/logo-marcas/logo_converse.png" alt="logo_converse">
+            <img class="logo-marca" src="./img/logo-marcas/logo_ray_ban.png" alt="logo Ray Ban">
+            <img class="logo-marca" src="./img/logo-marcas/logo_nike.jpg" alt="logo_nike">
+            <img class="logo-marca" src="./img/logo-marcas/logo_mocatto.png" alt="logo_mocatto">
+            <img class="logo-marca" src="./img/logo-marcas/logo_converse.png" alt="logo_converse">
+            <img class="logo-marca" src="./img/logo-marcas/logo_ray_ban.png" alt="logo Ray Ban">
+            <img class="logo-marca" src="./img/logo-marcas/logo_nike.jpg" alt="logo_nike">
+            <img class="logo-marca" src="./img/logo-marcas/logo_mocatto.png" alt="logo_mocatto">
+            <img class="logo-marca" src="./img/logo-marcas/logo_converse.png" alt="logo_converse">
+            <img class="logo-marca" src="./img/logo-marcas/logo_ray_ban.png" alt="logo Ray Ban">
+            <img class="logo-marca" src="./img/logo-marcas/logo_nike.jpg" alt="logo_nike">
+            <img class="logo-marca" src="./img/logo-marcas/logo_mocatto.png" alt="logo_mocatto">
+            <img class="logo-marca" src="./img/logo-marcas/logo_converse.png" alt="logo_converse">
+            <img class="logo-marca" src="./img/logo-marcas/logo_ray_ban.png" alt="logo Ray Ban">
+            <img class="logo-marca" src="./img/logo-marcas/logo_nike.jpg" alt="logo_nike">
+            <img class="logo-marca" src="./img/logo-marcas/logo_mocatto.png" alt="logo_mocatto">
+            <img class="logo-marca" src="./img/logo-marcas/logo_converse.png" alt="logo_converse">
+            <img class="logo-marca" src="./img/logo-marcas/logo_ray_ban.png" alt="logo Ray Ban">
+        </div>       
+    </div>
+
+    <!-- Agregar session 'Cinta con las Marcas'-->
+    <%- include('section/cinta-marcas.ejs') %>   
+    
+    <a class="fixed-bottom text-end mb-4 me-3" href="">
+        <img class="icono-whatsapp" src="/img/icono-whatsapp.png" alt="icono-whatsapp" style="border-radius: 5%;">  
+    </a>
+
+    <!-- scripts generales -->
+    <%- include('template/scripts.ejs') %>
+</body>
+</html>
