@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+    <!-- heade -->
+    <%- include('template/head.ejs') %>
+<body>
+    <div class="nav-bar">
+        <%- include('template/nav.ejs') %>
+    </div>
+    <div class="container-fluid">
+        <div class="row py-3">
+            <div class="col-md-6">
+                <div id="productCarousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../<%= productByKey.productImagen %>" class="d-block w-100" alt="../<%= productByKey.productImagen %>">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../<%= productByKey.productImagen %>" class="d-block w-100" alt="Reloj inteligente - Vista lateral">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../<%= productByKey.productImagen %>" class="d-block w-100" alt="Reloj inteligente - En uso">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Siguiente</span>
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h1 class="mb-4"><%= productByKey.productName %></h1>
+                <p class="lead"><%= productByKey.productDescription %></p>
+                <h2 class="h4 mb-3">Precio: $<%= productByKey.productPrice %></h2>
+                <h3 class="h5 mb-3">Características:</h3>
+                <ul class="list-group mb-4">
+                    <li class="list-group-item"><i class="fa-solid fa-check me-2"></i> Pantalla táctil AMOLED de 1.4 pulgadas</li>
+                    <li class="list-group-item"><i class="fa-solid fa-check me-2"></i> Monitoreo de frecuencia cardíaca 24/7</li>
+                    <li class="list-group-item"><i class="fa-solid fa-check me-2"></i> Resistente al agua hasta 50 metros</li>
+                    <li class="list-group-item"><i class="fa-solid fa-check me-2"></i> Batería de larga duración (hasta 7 días)</li>
+                    <li class="list-group-item"><i class="fa-solid fa-check me-2"></i> Seguimiento de actividad física y sueño</li>
+                </ul>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary" style="background-color: #ac1928; color:#fff" type="button">Agregar al Carrito</button>
+                    <a href="/productos" class="btn btn-outline-secondary" type="button">Volver</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- scripts generales -->
+    <%- include('template/scripts.ejs') %>
+</body>
+</html>

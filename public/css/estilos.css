@@ -3,12 +3,8 @@
     --colorPrincipal: #ac1928;
     --borderGeneral: 17px;
     --colorAmarillo: #FFC107;
-    --colorGrisFondo: #fafafa;
-}
-
-/* ---*/
-*{
-    font-family: "Noto Sans", sans-serif;
+    --colorGrisFondo: #f3f4f6;
+    --colorGrisFondoMasOscuro: #f0f0f0;
 }
 
 a {
@@ -18,267 +14,242 @@ a {
 
 body{
     margin-top: 60px;
-    background-color: var(--colorGrisFondo);
+    background-color:#ffffff;
+    font-family: "Noto Sans", sans-serif;
 }
 /* --------------------- NAV -----------------------*/
 
 #logo-principal-nav{
     max-width: 230px;
-    margin-left: 3%;
-}
-
-.nav-link{
-    color: var(--colorPrincipal);
 }
 
 /* --------------------- BOX FRASE INICIAL ----------------------- */
 .box-frase-inicial{
-background-color: var(--colorGrisFondo);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-
-}
-.frase-inicial-img{
-  
-    min-height: 300px;
-
+    box-flex-group: #fafafa;
 }
 .div-frase-inicial{
+    background-color: #fafafa;
+    grid-area: frase-inicial;
     padding: 10px;
-
+    display: flex;
+    justify-content: center;
+    align-items:center ;
 }
 
 .frase-inicial{
-    font-family: 'Dancing Script', cursive;
-    font-size: 5.7rem; /* Ajusta según tu diseño */
-    color:var(--colorPrincipal);  /* Usa el color de tu diseño */
-    text-align: center ;
-    
-    letter-spacing: 1px; /* Ajuste opcional para el espaciado */
-    line-height:0.8;
-}
-
-.imagen-cliente-feliz{
-    width: 100%;
-}
-
-/*----------------------------- BOTONES ----------------------------------- */
-.btn-1 {
-    background-color: var(--colorPrincipal);
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 8px 16px;
-    font-size: 16px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-
-.btn-1:hover {
-    background-color: var(--colorAmarillo);
-    color: #000;
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-    transform: translateY(-2px);
-}
-
-
-
-/* --------------------- BOX PRODUCTOS RECOMENDADOS ----------------------- */
-.box-recomendados{
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;    
-
-}
-.recomkendado{
-    background-color: #fff;
-}
-.recomendado-img{
-    width: 96%;
-}
-.recomendado-img:hover{
-    width: 100%;
-}
-.recomendado-p{
     text-align: center;
-}
-/*------------------------------ BOX CARACTERISTICAS-------------------------*/
-.caracteristicas-marcos{
-    height: 300px;
-    background-color: #e107cb;
-}
-.caracteristicas-cristales{
-    height: 300px;
-    background-color: #1cab23;
-}
-
-/* ---------------------------- FOOTER ---------------------------------------*/
-footer{
-    background-color: var(--colorPrincipal);
-    height: 50px;
-    margin-block: 30px;
-}
-
-footer a{
-    color: #fff;
-}
-
-footer i{
-   font-size: 1rem;
-   margin: 3px;
-}
-
-/*-------------------------- ICONOS WHATSAPP --------------------------------*/
-.icono-whatsapp{
-    width: 60px;
-}
-
-/* view Productos */
-.price-1{
-    color: rgb(138, 138, 138);
-    font-size: 0.9em;
-}
-
-.price-2{
-    color: var(--colorPrincipal);
-    font-size: 1.1em;
-    margin-left: 5px;
-}
-
-/**/
-.box-categoria-producto{
-    background-color: #fff;
-    padding: 10px;
-    padding-top: 30px;
-    font-size: 1.3rem;
-}
-
-.box-categoria-producto li{
-    color: #444444;
-}
-
-.box-categoria-producto li:hover{
-    color: var(--colorPrincipal);
-
-}
-
-/* -----------------------  sesión cinta de marcas  --------------------------------- */
-.box-marcas-cinta {
-    width: 100%;
-    overflow: hidden;
-    background-color: #fff;
-    padding-inline: 10px;
-    position: relative;
-}
-
-.box-marcas-cinta-contenido {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: max-content;
-    animation: mover 900s linear infinite;
-}
-.logo-marca{
-    width: 120px;
-    height: auto;
-    margin-right: 60px;
     
+    color: var(--colorPrincipal);
+    font-size: 3rem;
+    font-family: 'Dancing Script', cursive;
 }
-@keyframes mover {
-    from {
-        transform: translateX(0);
+
+.div-imagen-frase-inicial{
+    grid-area: imagen-frase-inicial;
+    background-color: #fafafa;
+}
+
+.imagen-frase-inicial{
+    width: 100%;
+}
+/* pantalla sm*/
+@media (max-width:768px) {
+    .box-frase-inicial{
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-areas: 'frase-inicial' 'imagen-frase-inicial';
+    }    
+    .imagen-frase-inicial-2{
+        display: none;
     }
-    to {
-        transform: translateX(-100%);
+
+    .frase-inicial{
+        font-size: 3.5rem;
+    }    
+}
+
+/* pantalla md */
+@media (min-width:768px) {
+    .box-frase-inicial{
+        display: grid;
+        grid-template-columns: 6fr 4fr;
+        grid-template-areas: 'frase-inicial imagen-frase-inicial';
+        
     }
+    .imagen-frase-inicial-1{
+        display: none;
+    }
+    .frase-inicial{
+        font-size: 3rem;
+        margin: 0px 20px;
+    } 
 }
 
-
-
-/*------------------------------ tipo de vision ---------------------------------*/
-.box-tipo-vision{
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
+/* pantalla lg */
+@media (min-width:1200px) {
+    .box-frase-inicial{
+        display: grid;
+        grid-template-columns: 6fr 4fr;
+        grid-template-areas: 'frase-inicial imagen-frase-inicial';
+        
+    }
+    .imagen-frase-inicial-1{
+        display: none;
+    }
+    .frase-inicial{
+        font-size: 4.4rem;
+        margin: 0px 30px;
+    } 
 }
 
-.tipo-vision{
+/*--------------------- BOX RECOMMENDED* ---------------------*/
+
+.box-recommended{
     background-color: #fff;
-    margin-inline: 10px;
-    border: 1px solid rgb(218, 218, 218);
-}
-
-.box-tipo-vision-row{
+    padding: 10px;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;   
 }
 
-.card-header-tipo{
-    background: var(--colorPrincipal);
-    color: #fff;
-}
+.recommended {
+    min-width: 200px;
+    max-width: 300px;                     
+    background-color: #fff;
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: 7fr 2fr;
+    grid-template-areas: 
+       "div-recommended-img"
+       "recommended-p";
+ }
 
-ul{
-    list-style-type: none;
-}
-
-/*--------------------------------------------------------------------*/
-.centrar {
+ .div-recommended-img{
+    grid-area: div-recommended-img;
+    width: 250px;
+    height: 210px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+ }
+ 
+ .recommended-img {
+    width: 93%;
+    transition: width 0.5s ease; /* Aquí defines la transición */
+ }
+ 
+ .recommended-img:hover {
+    width: 100%;
+    height: 100%;
+ }
+ 
+ .recommended-p {
+    grid-area: recommended-p;
+    font-size: 1.4rem;
+    color: var(--colorPrincipal);
+    text-align: center;
+ }
 
-/*------------------------------ sesión: Contacto con Mapa ---------------------------*/
+ @media(min-width:768px){
+    .box-recommended-2{
+        display: none;
+    }
+ }
 
-.section-contacto{
-    background-color: var(--colorPrincipal);
-}
-.div-map{
-    padding: 10px 20px;
-}
-#map{
+ @media(max-width:768px){
+    .box-recommended{
+        display: none;
+    }
+ }
+
+ /*---------------------------------- BOX CARACTERISTICAS Y BENEFICIOS ----------------------------*/
+
+ .box-caracteristicas{
+    grid-area: caracteristicas ;
+
     height: 300px;
-   
-}
-.section-contacto span{
-    color: #fff;
-    margin-left: 20px;
-    font-size: 1.8rem;
-}
+ }
 
-.section-contacto-dl dt{
-    color: var(--colorAmarillo);
-}
-.section-contacto-dl{
-    margin: 20px 0px;
-
+ .box-beneficios {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    'beneficio1 beneficio2'
+    'beneficio3 beneficio4';
 }
 
-.section-contacto-dl dd{
-    color: #fff;
-    font-size: 1.1rem;
-    margin-bottom: 10px;
+.beneficio1 {
+    grid-area: beneficio1;
 }
 
-/* -------------------------------                                 -------------------------------------------------------*/
+.beneficio2 {
+    grid-area: beneficio2;
+}
 
-strong, .icono{
+.beneficio3 {
+    grid-area: beneficio3;
+}
+
+.beneficio4 {
+    grid-area: beneficio4;
+}
+.beneficio{
+    padding: 20px;
+}
+
+.beneficio .center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     color: var(--colorPrincipal);
 }
 
-
-/*
-.noto-sans-<uniquifier> {
-  font-family: "Noto Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
+.center i, .center strong {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
-*/
+
+@media(min-width:768px){
+    .caracteristicas_beneficios{
+        display: grid;
+        grid-template-columns:  5fr 4fr;
+        grid-template-areas: 'caracteristicas beneficios';
+    }
+}
+
+@media(max-width:768px){
+    .caracteristicas_beneficios{
+        display: grid;
+        grid-template-rows:  5fr 4fr;
+        grid-template-areas: 'caracteristicas' 'beneficios';
+    }
+}
+
+.list-group-item {
+    border-left: none;
+    border-right: none;
+}
+
+.justified-paragraph {
+    text-align: justify; /* Justifica el texto */
+}
+
+
+.card-jornada-oftalmologica{
+    margin: 20px;
+    background: var(--colorPrincipal);
+}
+
+.card-jornada-oftalmologica h2{
+    text-align: center;
+    color: #fff;
+}
+
+.card-jornada-oftalmologica .form-label{
+    color: #fff;
+}
+
+.card-jornada-oftalmologica .invalid-feedback{
+    color: #FFC107;
+}

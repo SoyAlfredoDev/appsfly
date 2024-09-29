@@ -1,0 +1,116 @@
+/* variables */
+:root {
+    --colorPrincipal: #ac1928;
+    --borderGeneral: 17px;
+    --colorAmarillo: #FFC107;
+    --colorGrisFondo: #f3f4f6;
+    --colorGrisFondoMasOscuro: #f0f0f0;
+}
+
+.nav-bar-product-view{
+    padding: 20px;
+    background-color: red;
+    grid-area:nav-bar-product-view ;
+}
+
+.box-class{
+    height: 100vh;
+
+    
+    grid-area: box-class;
+    padding: 5px;
+    cursor: default; 
+    position: fixed;
+}
+
+.box-class .box-class-class{
+
+    background-color: #fff;
+    width: 170px;
+    height: 100%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 7px ;
+    padding: 10px;
+}
+
+.box-class .box-class-class li{
+    margin-bottom: 10px;
+    transition: color 0.5s ease; 
+}
+
+.box-class .box-class-class li:hover{
+    color: var(--colorPrincipal);
+    font-size: 1.1rem;
+}
+
+.box-class ul{
+    list-style-type: none;
+    padding: 5px 1px;
+}
+.box-products{
+    margin-left: 180px;
+    grid-area: box-products;
+    padding: 0px 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;   
+}
+
+.boxProductGallery{
+    width:250px ;
+    height: 350px;
+    border-radius: 7px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+}
+
+.productGalleryImg{
+    grid-area: productGalleryImg;
+    padding: 10px;
+
+}
+.productGalleryBody{
+    grid-area: productGalleryBody;
+    padding: 0px 10px;
+}
+
+.product-view-btn{
+    grid-area: product-view-btn;
+}
+
+.product-view-price{
+    grid-area:product-view-price ;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.productGalleryPrice{
+    grid-area: productGalleryPrice;
+    padding: 0px 10px;
+    display: grid;
+    grid-template-columns:1fr 2fr ;
+    grid-template-areas: 'product-view-btn product-view-price';
+    height: 20px;
+}
+.boxProductGallery {
+    display: grid;
+    grid-template-rows: auto auto auto; /* Todas las filas con el mismo tamaño */
+    grid-template-areas:  
+        'productGalleryImg'
+        'productGalleryBody'
+        'productGalleryPrice';
+    margin: 5px ;
+}
+
+.productGallery img{
+    width: 100%
+}
+
+.btn-primary-optica{
+    background-color: var(--colorPrincipal);
+    width: 90px;
+    border-radius: 7px;
+    color: #fff;
+    padding: 2px 25px ;
+}
+

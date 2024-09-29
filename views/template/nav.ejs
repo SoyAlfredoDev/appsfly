@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top w-100 shadow" style="background-color: #fff">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">
             <img src="/img/logo-principal.png" id="logo-principal-nav" alt="logo principal óptica y cristal">
@@ -13,6 +13,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link <%if(view === 'productos') {%> active <%}%>" href="/productos" <%if(view === 'productos') {%> style="color: #ac1928;" <%}%>>Productos</a>
+                </li>
+                <li class="nav-item"></li>
+                    <a class="nav-link <%if(view === 'jornada-oftalmologica') {%> active <%}%>" href="/Jornada-oftalmologica" <%if(view === 'jornada-oftalmologica') {%> style="color: #ac1928;" <%}%>>Jornadas Oftalmologíca</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link <%if(view === 'contacto') {%> active <%}%>" href="#" <%if(view === 'contactos') {%> style="color: #ac1928;" <%}%>>Contactos</a>

@@ -1,0 +1,82 @@
+<div class="section-contact-with-map">
+    <div class="box-menu">
+        <h4>Navegación</h4>
+        <hr />
+        <ul>
+            <li class="nav-item">
+                <a class="nav-link <%if(view === 'inicio') {%> active <%}%>" aria-current="page" href="/">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link <%if(view === 'productos') {%> active <%}%>" href="/productos">Productos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link <%if(view === 'jornada-oftalmologica') {%> active <%}%>" href="/Jornada-oftalmologica">Jornadas Oftalmologíca</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link <%if(view === 'contacto') {%> active <%}%>" href="#" >Contactos</a>
+            </li>
+        </ul>
+    </div>
+    <div class="box-map">     
+        <h4>Encuéntranos</h4>
+        <hr />
+        <div id="map"></div>
+    </div>
+    <div class="box-contact">
+        <h4>Santiago</h4>
+        <hr />
+        <dl class="section-contacto-dl">
+            <dt>whatsapp</dt>
+            <dd><i class="fa-brands fa-whatsapp"></i> +56 9 2162 9730</dd>
+            <dt>
+                ubicación
+            </dt>
+            <dd>
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i> Huerfanos 713 local 18, Santiago Centro
+            </dd>
+            <dt>instagram</dt>
+            <dd><i class="fa-brands fa-instagram " aria-hidden="true"></i> @opticaycristal.cl</dd>
+            <dt>e-mail</dt>
+            <dd><i class="fa-brands fa-instagram " aria-hidden="true"></i> contacto@opticaycristal.cl</dd>
+        </dl>
+    </div>  
+</div>
+
+<!-- API de Google Map -->
+<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPSxGpd1uRMTRa6FjMz7QZXbgXEFQWv88&libraries=places&callback=initMap"></script>
+<script>
+async function initMap() {
+    try {
+        const { Map, Marker, Geocoder } = await google.maps.importLibrary("maps");
+        
+        // Crear el mapa centrado en Santiago
+        const map = new Map(document.getElementById("map"), {
+            center: { lat: -33.4489, lng: -70.6693 }, // Coordenadas iniciales aproximadas de Santiago
+            zoom: 13, 
+        });
+
+        const geocoder = new google.maps.Geocoder();
+        const address = 'Huerfanos 713, Santiago Centro';
+
+        // Obtener las coordenadas de la dirección
+        geocoder.geocode({ 'address': address }, function(results, status) {
+            if (status === 'OK') {
+                // Centramos el mapa en la ubicación obtenida
+                map.setCenter(results[0].geometry.location);
+
+                // Colocamos el marcador en la ubicación
+                new Marker({
+                    position: results[0].geometry.location,
+                    map: map,
+                    title: address
+                });
+            } else {
+                console.error('Geocodificación fallida: ' + status);
+            }
+        });
+    } catch (error) {
+        console.error('Error al inicializar el mapa:', error);
+    }
+}
+initMap();
+</script>

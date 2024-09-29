@@ -1,0 +1,32 @@
+.section-brand-slider{
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+    padding-inline: 10px;
+    position: relative;
+}
+
+.box-brand-slider{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: max-content;
+    animation: mover 1400s linear infinite;
+    padding: 20px 0px;
+}
+
+.brand{
+    width: 100px;
+    height: auto;
+    margin-right: 120px;
+}
+
+@keyframes mover {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}

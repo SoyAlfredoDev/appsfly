@@ -1,0 +1,81 @@
+/* variables */
+:root {
+    --colorPrincipal: #ac1928;
+    --borderGeneral: 17px;
+    --colorAmarillo: #FFC107;
+    --colorGrisFondo: #fafafa;
+    --colorGrisFondoMasOscuro: #f0f0f0;
+}
+
+.section-contacto-dl dt, .section-contacto-dl dd{
+    font-size: 0.9rem;
+
+}
+
+.section-contact-with-map{
+    background-color: #ac1928;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.box-map{
+    grid-area: box-map;
+    background-color: var(--colorPrincipal);
+    height: 100%;
+    width: 100%;
+    padding:10px;
+    color: #fff;
+}
+
+.box-menu{
+    grid-area: box-menu;
+    padding:10px;
+    color: #fff ;
+
+}
+
+.box-contact{
+    grid-area: box-contact;
+    padding: 10px;
+    height: auto;
+    color: #fff;
+}
+
+
+#map{
+    border-radius: 7px;
+    width: 100%;
+    height: 196px;
+    background-color: #FFC107;
+}
+
+@media(min-width:768px){
+    .section-contact-with-map{
+        display: grid;
+        grid-template-columns: 1fr 1.3fr 1fr;
+        grid-template-areas: 'box-menu box-map box-contact';
+        gap: 20px;
+    }
+}
+
+@media(max-width:768px){
+    .section-contact-with-map{
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+        'box-map'
+        'box-contact'
+    }
+    .box-menu{
+        display: none;
+    }
+}
+
+.box-menu ul{
+    list-style: none;
+    color: #fff;
+}
+
+.box-menu ul li{
+    margin-bottom: 7px;
+}

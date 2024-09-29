@@ -3,40 +3,105 @@
     <!-- heade -->
     <%- include('template/head.ejs') %>
 <body>
+    <%- include('template/nav.ejs') %>
+    <div class="container">
+        <div class="card shadow" >
+            <div class="row p-3">
+                <div class="col-12">
+                    <h4 class="text-center">Vista Producto</h4>
+                </div>            
+                <div class="col-6">
+                    <form action="/admin/update/<%= productByKey.productKey %>" method="post">
+                        <dl class="row">
+                            <dt class="col-4">
+                                <label for="productId">Código Único</label>
+                            </dt>
+                            <dd class="col-8">
+                                <input type="text" value="<%= productByKey.productID %>" name="productId" id="productId" class="form-control text-center text-danger" required <% if(viewType!= 'edit'){%> disabled <%}%>> 
+                            </dd>
+                        </dl>
+                        
+                        <dl class="row">
+                            <dt class="col-4">
+                                <label for="productCategory">Categoría</label>
+                            </dt>
 
-    <form action="" method="post">
-        <div class="mb-3">
-            <label for="productId" class="form-label">Código Único</label>
-            <input type="text" name="productId" id="productId" class="form-control" required>
+                            <dd class="col-8">
+                                <select name="productCategory" id="productCategory" class="form-select text-center" required 
+                                <% if(viewType != 'edit'){%> disabled <%}%> >
+                                <option disabled>Selecciona una Categoría</option>
+                                <option value="niños" <% if (productByKey.productCategory === 'niños') { %> selected <% } %>>Niños</option>
+                                <option value="jóvenes" <% if (productByKey.productCategory === 'jóvenes') { %> selected <% } %>>Jóvenes</option>
+                                <option value="hombre" <% if (productByKey.productCategory === 'hombre') { %> selected <% } %>>Hombre</option>
+                                <option value="mujer" <% if (productByKey.productCategory === 'mujer') { %> selected <% } %>>Mujer</option>
+                            </select>
+                            
+                            </dd>
+                        </dl>
+                       
+                        <dl class="row">
+                            <dt class="col-4">
+                                <label for="productName">Nombre</label>
+                            </dt>
+                            <dd class="col-8">
+                                <input type="text" value="<%= productByKey.productName %>" name="productName" id="productName" class="form-control " required <% if(viewType!= 'edit'){%> disabled <%}%>>
+                            </dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-4">
+                                <label for="productDescription">Descripción</label>
+                            </dt>
+                            <dd class="col-8">
+                                <input type="text" value="<%= productByKey.productDescription %>" name="productDescription" id="productDescription" class="form-control" required <% if(viewType!= 'edit'){%> disabled <%}%>>
+                            </dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-4">
+                                <label for="productPrice">Precio</label>
+                            </dt>
+                            <dd class="col-8">
+                                <input type="text" value="<%= productByKey.productPrice %>" name="productPrice" id="productPrice" class="form-control text-end" required <% if(viewType!= 'edit'){%> disabled <%}%>>
+                            </dd>
+                        </dl>
+                        <div class="form-check form-switch text-center">
+                            <label for="productRecommended">
+                                <input type="checkbox" value="<%= productByKey.productRecommended %>" class="form-check-input" id="productRecommended" name="productRecommended" <% if(productByKey.productRecommended){%>checked<%}%> >
+                                Mostrar en la sección recomendados?
+                           </label>                     
+                        </div>
+                        <div class="text-center">
+                            <a href="/admin/dashboard" class="btn btn-secondary">Cancelar</a>
+
+                            <button type="submit" class="btn btn-warning"
+                                 <% if(viewType!= 'edit'){%> hidden <%}%>>Guardar</button>
+                        </div>                        
+                    </form> 
+                </div>
+                <div class="col-6 bg-warning p-3">
+                    <img src="/img/modelos-recomendados/lente-recomendado-1.jpg" alt="Gafas Mocatto recomendadas" class="card-img-top">
+                </div>
+            </div>
         </div>
-
-        <div class="mb-3">
-            <label for="productoCategory" class="form-label">Categoría</label>
-            <select name="productoCategory" id="productoCategory" class="form-select" required>
-                <option value="">Todos</option>
-                <option value="niños">Niños</option>
-                <option value="jóvenes">Jóvenes</option>
-                <option value="hombre">Hombre</option>
-                <option value="mujer">Mujer</option>
-            </select>
-        </div>
-
-        <div class="mb-3">
-            <label for="productName" class="form-label">Nombre</label>
-            <input type="text" name="productName" id="productName" class="form-control" required>
-        </div>
-
-        <div class="mb-3">
-            <label for="productPrice" class="form-label">Precio</label>
-            <input type="text" name="productPrice" id="productPrice" class="form-control" required>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Enviar</button>
-    </form>
-    
-
-
+    </div>
     <!-- scripts generales -->
     <%- include('template/scripts.ejs') %>
+    <script>
+        const productRecommended = document.querySelector('#productRecommended')
+        productRecommended.addEventListener('click',()=>{
+            console.log('actual', productRecommended.value)
+            if(productRecommended.value == 'true'){
+                productRecommended.value = false;
+                productRecommended.checked = false;
+            } else{
+                console.log('este')
+                productRecommended.value = true;
+                
+                productRecommended.checked = true;
+            }
+            console.log('nuevo', productRecommended.value)
+
+        })
+
+    </script>
 </body>
 </html>

@@ -1,0 +1,62 @@
+<div class="box-recommended">
+    <% products.forEach(product => { %>
+    <% if(product.productRecommended) { %>
+        <a href="/">
+            <div class="recommended">
+                <div class="div-recommended-img">
+                    <img class="recommended-img" src="<%= product.productImagen %>" alt="<%= product.productName %>">
+
+                </div>                
+                <p class="recommended-p"><%= product.productName %></p>
+            </div>
+        </a>
+        <% } %>      
+    <% }) %>               
+</div>
+
+<!-- Contenedor para pantallas medianas o más pequeñas --> 
+<div class="box-recommended-2">
+  <!-- Carrusel de Bootstrap -->
+  <div id="carousel-recommended" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <!-- Contenedor para los indicadores del carrusel -->
+    <div class="carousel-indicators">
+      <% products.forEach((product, index) => { %>
+        <button 
+          type="button" 
+          data-bs-target="#carousel-recommended" 
+          data-bs-slide-to="<%= index %>" 
+          class="<%= index === 0 ? 'active' : '' %> " 
+          aria-current="<%= index === 0 ? 'true' : 'false' %>" 
+          aria-label="Slide <%= index + 1 %>">
+        </button>
+      <% }); %>
+    </div>
+
+    <!-- Contenedor para el contenido del carrusel -->
+    <div class="carousel-inner">
+      <% products.forEach((product, index) => { %>
+        <div class="carousel-item <%= index === 0 ? 'active' : '' %> mb-5">
+          <!-- Imagen del producto en el carrusel -->
+          <img src="<%= product.productImagen %>" class="d-block w-100" alt="<%= product.productName %>">
+          <!-- Nombre del producto -->
+          <p class="recommended-p pt-1"><%= product.productName %></p>
+        </div>
+      <% }); %>
+    </div>
+
+    <!-- Botón para navegar a la diapositiva anterior -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carousel-recommended" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+
+    <!-- Botón para navegar a la diapositiva siguiente -->
+    <button class="carousel-control-next" type="button" data-bs-target="#carousel-recommended" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+  
+
+

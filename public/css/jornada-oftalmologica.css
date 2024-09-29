@@ -1,0 +1,25 @@
+/* variables */
+:root {
+    --colorPrincipal: #ac1928;
+    --borderGeneral: 17px;
+    --colorAmarillo: #FFC107;
+    --colorGrisFondo: #f3f4f6;
+    --colorGrisFondoMasOscuro: #f0f0f0;
+}
+
+.section-jornada-oftalmologica-view {
+    padding-top: 13px;
+}
+
+#contact-form h2 {
+    font-weight: bold;
+    text-align: center;
+}
+
+.list-group-flush .icono {
+    color: var(--colorPrincipal);
+}
+
+#contacto-jornada-oftalmologica {
+    height: 100%;
+}

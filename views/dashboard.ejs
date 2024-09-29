@@ -5,43 +5,105 @@
 <body>
     <%- include('template/nav.ejs') %>
     <div class="container pt-2">
+        <!-- Button trigger modal -->
         <div class="row">
-            <div class="col-3"> <a class="btn btn-success" href="/admin/producto-nuevo"> + Agregar Producto</a></div>
+            <div class="col-3">
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalNewProduct">
+                    + Agregar Producto
+                </button>
+            </div>            
             <div class="col-9 text-end"><h1> Administración de contenido: Prodúctos </h1></div>
-        </div>
-        
+        </div>        
         <div class="table-responsive">        
-            <table class="table">
+            <table class="table table-hover table-striped">
                 <thead>
                     <tr>
-                        <th>#</th>
                         <th>Código</th>
                         <th>Nombre</th>
                         <th>Descripción</th>
                         <th>Precio</th> 
-                        <th>Staus</th>
+                        <th>Recomendado</th>
                         <th>Acciones</th>                       
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>m-003</td>
-                        <td>Mocatto </td>
-                        <td>Lente optico para jovenes </td>
-                        <td>19.990</td>
-                        <td>disponible </td>
-                        <td> 
-                            <button class="btn text-danger">-</button>
-                            <button class="btn text-success">+</button>
-                        </td>
-                    </tr>  
+                    <% products.forEach(product => {%>
+                        <tr>
+                            <td class="text-center"> <%= product.productID  %> </td>
+                            <td><%= product.productName %></td>
+                            <td style="max-width: 100px;" title="<%= product.productDescription %>" ><%= product.productDescription %></td>
+                            <td class="text-end mil000"><%= product.productPrice %></td>
+                            <td class="text-center">
+                                <i class="fa-solid fa-circle-check text-secondary  <% if (product.productRecommended) { %>text-success<% } %>"></i>
+                            </td>
+                            <td> 
+                                <a class="btn text-danger" href="/admin/delete/<%= product.productKey  %> "><!-- delete -->
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                                <a class="btn text-warning" href="/admin/edit/<%= product.productKey  %>"><!-- edit -->
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                            </td>
+                        </tr>  
+                    <% }) %>                    
                 </tbody>
             </table>          
         </div>
     </div>
 
-
+    <!-- Modal -->
+    <div class="modal fade" id="modalNewProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="/admin/update/newProduct" method="post" enctype="multipart/form-data">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Nuevo Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">                    
+                    <div class="mb-3">
+                        <label for="productID" class="form-label">Código Único</label>
+                        <input type="text" name="productID" id="productID" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="productCategory" class="form-label">Categoría</label>
+                        <select name="productCategory" id="productoCategory" class="form-select" required>
+                            <option value="">Todos</option>
+                            <option value="niños">Niños</option>
+                            <option value="jóvenes">Jóvenes</option>
+                            <option value="hombre">Hombre</option>
+                            <option value="mujer">Mujer</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="productName" class="form-label">Nombre</label>
+                        <input type="text" name="productName" id="productName" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="productDescription" class="form-label">Descripción</label>
+                        <input type="text" maxlength="127" name="productDescription" id="productDescription" class="form-control" required>
+                    </div>  
+                    <div class="mb-3">
+                        <label for="productPrice" class="form-label">Precio</label>
+                        <input type="number" name="productPrice" id="productPrice" class="form-control" required>
+                    </div>                                      
+                    <div class="mb-3">
+                        <label for="productImagen" class="form-label">Imagen</label>
+                        <input type="file" name="productImagen" id="productImagen" class="form-control" required>
+                    </div> 
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" value="true" name="productRecommended" id="productRecommended" class="form-check-input">
+                        <label for="productRecommended" class="form-check-label">Recomendado</label>
+                    </div>  
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-success">Agregar</button>
+                </div>
+            </form> 
+        </div>
+        </div>
+    </div>
 
     <!-- scripts generales -->
     <%- include('template/scripts.ejs') %>

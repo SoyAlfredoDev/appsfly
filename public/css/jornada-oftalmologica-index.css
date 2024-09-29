@@ -1,0 +1,44 @@
+.title-jornada-oftalmologica {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-jornada-oftalmologica {
+    grid-area: text-jornada-oftalmologica;
+}
+
+.img-jornada-oftalmologica {
+    grid-area: img-jornada-oftalmologica;
+}
+
+
+@media(min-width:992px) {
+
+    .section-jornada-oftalmologica {
+        display: grid;
+        grid-template-columns: 4fr 5fr;
+        grid-template-areas: 'img-jornada-oftalmologica text-jornada-oftalmologica ';
+
+    }
+}
+
+.box-title-jornada-oftalmologica {
+    height: 100px;
+    background-color: #ac1928;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-title-jornada-oftalmologica h2 {
+    color: #fff;
+}
+
+.img-jornada-oftalmologica img {
+    width: 100%;
+}
+
+.section-jornada-oftalmologica {
+    margin-bottom: 30px;
+}

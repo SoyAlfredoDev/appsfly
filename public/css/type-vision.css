@@ -1,0 +1,53 @@
+/* variables */
+:root {
+    --colorPrincipal: #ac1928;
+    --borderGeneral: 17px;
+    --colorAmarillo: #FFC107;
+    --colorGrisFondo: #f3f4f6;
+    --colorGrisFondoMasOscuro: #f0f0f0;
+}
+
+
+.tipo-vision-1{
+    grid-area: tipo-vision-1;
+    margin: 0px 20px;
+
+}
+.tipo-vision-2{
+    grid-area: tipo-vision-2;
+    margin: 0px 20px;
+
+
+}
+.tipo-vision-3{
+    grid-area: tipo-vision-3;
+    margin: 0px 20px;
+}
+
+
+.tipo-vision{
+    width: 100%;
+    height: 100%;
+}
+
+
+.box-tipo-vision-row{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 'tipo-vision-1 tipo-vision-2 tipo-vision-3';
+
+}
+
+.section-type-vision{
+    background-color: #fff;
+    padding: 10px 20px;
+}
+
+.card-body-tipo i{
+    color: var(--colorPrincipal);
+
+}
+
+.section-type-vision{
+    font-size: 0.9rem;
+}
