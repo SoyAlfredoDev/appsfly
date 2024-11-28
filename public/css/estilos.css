@@ -8,175 +8,185 @@
 }
 
 a {
-    text-decoration: none; /* Elimina el subrayado */
-    color: inherit; /* Toma el color del texto padre o define un color específico */
+    text-decoration: none;
+    /* Elimina el subrayado */
+    color: inherit;
+    /* Toma el color del texto padre o define un color específico */
 }
 
-body{
+body {
     margin-top: 60px;
-    background-color:#ffffff;
+    background-color: #ffffff;
     font-family: "Noto Sans", sans-serif;
 }
+
 /* --------------------- NAV -----------------------*/
 
-#logo-principal-nav{
+#logo-principal-nav {
     max-width: 230px;
 }
 
 /* --------------------- BOX FRASE INICIAL ----------------------- */
-.box-frase-inicial{
+.box-frase-inicial {
     box-flex-group: #fafafa;
 }
-.div-frase-inicial{
+
+.div-frase-inicial {
     background-color: #fafafa;
     grid-area: frase-inicial;
     padding: 10px;
     display: flex;
     justify-content: center;
-    align-items:center ;
+    align-items: center;
 }
 
-.frase-inicial{
+.frase-inicial {
     text-align: center;
-    
     color: var(--colorPrincipal);
     font-size: 3rem;
     font-family: 'Dancing Script', cursive;
 }
 
-.div-imagen-frase-inicial{
+.div-imagen-frase-inicial {
     grid-area: imagen-frase-inicial;
     background-color: #fafafa;
 }
 
-.imagen-frase-inicial{
+.imagen-frase-inicial {
     width: 100%;
 }
+
 /* pantalla sm*/
 @media (max-width:768px) {
-    .box-frase-inicial{
+    .box-frase-inicial {
         display: grid;
         grid-template-rows: auto auto;
         grid-template-areas: 'frase-inicial' 'imagen-frase-inicial';
-    }    
-    .imagen-frase-inicial-2{
+    }
+
+    .imagen-frase-inicial-2 {
         display: none;
     }
 
-    .frase-inicial{
+    .frase-inicial {
         font-size: 3.5rem;
-    }    
+    }
 }
 
 /* pantalla md */
 @media (min-width:768px) {
-    .box-frase-inicial{
+    .box-frase-inicial {
         display: grid;
         grid-template-columns: 6fr 4fr;
         grid-template-areas: 'frase-inicial imagen-frase-inicial';
-        
+
     }
-    .imagen-frase-inicial-1{
+
+    .imagen-frase-inicial-1 {
         display: none;
     }
-    .frase-inicial{
+
+    .frase-inicial {
         font-size: 3rem;
         margin: 0px 20px;
-    } 
+    }
 }
 
 /* pantalla lg */
 @media (min-width:1200px) {
-    .box-frase-inicial{
+    .box-frase-inicial {
         display: grid;
         grid-template-columns: 6fr 4fr;
         grid-template-areas: 'frase-inicial imagen-frase-inicial';
-        
+
     }
-    .imagen-frase-inicial-1{
+
+    .imagen-frase-inicial-1 {
         display: none;
     }
-    .frase-inicial{
+
+    .frase-inicial {
         font-size: 4.4rem;
         margin: 0px 30px;
-    } 
+    }
 }
 
 /*--------------------- BOX RECOMMENDED* ---------------------*/
 
-.box-recommended{
+.box-recommended {
     background-color: #fff;
     padding: 10px;
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap;   
+    flex-wrap: wrap;
 }
 
 .recommended {
     min-width: 200px;
-    max-width: 300px;                     
+    max-width: 300px;
     background-color: #fff;
     border-radius: 10px;
     display: grid;
     grid-template-rows: 7fr 2fr;
-    grid-template-areas: 
-       "div-recommended-img"
-       "recommended-p";
- }
+    grid-template-areas:
+        "div-recommended-img"
+        "recommended-p";
+}
 
- .div-recommended-img{
+.div-recommended-img {
     grid-area: div-recommended-img;
     width: 250px;
     height: 210px;
     display: flex;
     justify-content: center;
     align-items: center;
- }
- 
- .recommended-img {
+}
+
+.recommended-img {
     width: 93%;
-    transition: width 0.5s ease; /* Aquí defines la transición */
- }
- 
- .recommended-img:hover {
+    transition: width 0.5s ease;
+    /* Aquí defines la transición */
+}
+
+.recommended-img:hover {
     width: 100%;
     height: 100%;
- }
- 
- .recommended-p {
+}
+
+.recommended-p {
     grid-area: recommended-p;
     font-size: 1.4rem;
     color: var(--colorPrincipal);
     text-align: center;
- }
+}
 
- @media(min-width:768px){
-    .box-recommended-2{
+@media(min-width:768px) {
+    .box-recommended-2 {
         display: none;
     }
- }
+}
 
- @media(max-width:768px){
-    .box-recommended{
+@media(max-width:768px) {
+    .box-recommended {
         display: none;
     }
- }
+}
 
- /*---------------------------------- BOX CARACTERISTICAS Y BENEFICIOS ----------------------------*/
+/*---------------------------------- BOX CARACTERISTICAS Y BENEFICIOS ----------------------------*/
 
- .box-caracteristicas{
-    grid-area: caracteristicas ;
+.box-caracteristicas {
+    grid-area: caracteristicas;
 
     height: 300px;
- }
+}
 
- .box-beneficios {
+.box-beneficios {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-template-areas: 
-    'beneficio1 beneficio2'
-    'beneficio3 beneficio4';
+    grid-template-areas:
+        'beneficio1 beneficio2'
+        'beneficio3 beneficio4';
 }
 
 .beneficio1 {
@@ -194,11 +204,12 @@ body{
 .beneficio4 {
     grid-area: beneficio4;
 }
-.beneficio{
+
+.beneficio {
     padding: 20px;
 }
 
-.beneficio .center{
+.beneficio .center {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -206,22 +217,23 @@ body{
     color: var(--colorPrincipal);
 }
 
-.center i, .center strong {
+.center i,
+.center strong {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-@media(min-width:768px){
-    .caracteristicas_beneficios{
+@media(min-width:768px) {
+    .caracteristicas_beneficios {
         display: grid;
-        grid-template-columns:  5fr 4fr;
+        grid-template-columns: 5fr 4fr;
         grid-template-areas: 'caracteristicas beneficios';
     }
 }
 
-@media(max-width:768px){
-    .caracteristicas_beneficios{
+@media(max-width:768px) {
+    .caracteristicas_beneficios {
         display: grid;
-        grid-template-rows:  5fr 4fr;
+        grid-template-rows: 5fr 4fr;
         grid-template-areas: 'caracteristicas' 'beneficios';
     }
 }
@@ -232,24 +244,25 @@ body{
 }
 
 .justified-paragraph {
-    text-align: justify; /* Justifica el texto */
+    text-align: justify;
+    /* Justifica el texto */
 }
 
 
-.card-jornada-oftalmologica{
+.card-jornada-oftalmologica {
     margin: 20px;
     background: var(--colorPrincipal);
 }
 
-.card-jornada-oftalmologica h2{
+.card-jornada-oftalmologica h2 {
     text-align: center;
     color: #fff;
 }
 
-.card-jornada-oftalmologica .form-label{
+.card-jornada-oftalmologica .form-label {
     color: #fff;
 }
 
-.card-jornada-oftalmologica .invalid-feedback{
+.card-jornada-oftalmologica .invalid-feedback {
     color: #FFC107;
 }

@@ -1,72 +1,79 @@
 <!DOCTYPE html>
 <html lang="es">
-    <!-- heade -->
-    <%- include('template/head.ejs') %>
-<body style="background-color: rgb(253, 242, 242);">
-    <div class="nav-bar">
-        <%- include('template/nav.ejs') %>
-    </div>
-    
-    <div class="section-product-gallery">
-        <div class="box-class">
-            <div class="box-class-class">
-                <ul>
-                    <li class="class-link todos">Todos</li>
-                    <li class="class-link niños">Niños</li>
-                    <li class="class-link jóvenes">Jovenes</li>
-                    <li class="class-link mujer">Mujer</li>
-                    <li class="class-link hombre">Hombre</li>
-                </ul>
-            </div>           
+<!-- heade -->
+<%- include('template/head.ejs') %>
+
+    <body style="background-color: rgb(253, 242, 242);">
+        <div class="nav-bar">
+            <%- include('template/nav.ejs') %>
         </div>
-        <div class="box-products">             
-            <% products.forEach(product => { %>
-                <div class="boxProductGallery">                   
-                    <div class="productGalleryImg">
-                        <img src="<%= product.productImagen %>" alt="Gafas Mocatto recomendadas" class="card-img-top">
-                    </div> 
-                    <div class="productGalleryBody">
-                        <h4 class="text-center"><%= product.productName %></h4>
-                        <div>
-                            <small><%= product.productDescription %></small>
-                        </div>
-                    </div> 
-                    <div class="productGalleryPrice">                       
-                        <div class="product-view-btn text-center">
-                            <a class="btn-primary-optica" style="width: 70px;" href="/productos/<%= product.productKey %>">ver</a>
-                        </div>
-                        <div class="product-view-price">
-                            <small class="price-1 me-2"><s>$00.000</s> </small>
-                            <span class="price-2"> $<%= product.productPrice %></span>    
-                        </div>
-                    </div>
+
+        <div class="section-product-gallery">
+            <div class="box-class">
+                <div class="box-class-class">
+                    <ul>
+                        <li class="class-link todos">Todos</li>
+                        <li class="class-link niños">Niños</li>
+                        <li class="class-link jóvenes">Jovenes</li>
+                        <li class="class-link mujer">Mujer</li>
+                        <li class="class-link hombre">Hombre</li>
+                    </ul>
                 </div>
-            <% }) %> 
-        </div>   
-    </div>
+            </div>
+            <div class="box-products">
+                <% products.forEach(product=> { %>
+                    <div class="boxProductGallery">
+                        <div class="productGalleryImg">
+                            <img src="<%= product.productImagen %>" alt="Gafas Mocatto recomendadas"
+                                class="card-img-top">
+                        </div>
+                        <div class="productGalleryBody">
+                            <h4 class="text-center">
+                                <%= product.productName %>
+                            </h4>
+                            <div>
+                                <small>
+                                    <%= product.productDescription %>
+                                </small>
+                            </div>
+                        </div>
+                        <div class="productGalleryPrice">
+                            <div class="product-view-btn text-center">
+                                <a class="btn-primary-optica" style="width: 70px;"
+                                    href="/productos/<%= product.productKey %>">ver</a>
+                            </div>
+                            <div class="product-view-price">
+                                <small class="price-1 me-2"><s>$00.000</s> </small>
+                                <span class="price-2"> $<%= product.productPrice %></span>
+                            </div>
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+        </div>
 
-    <!-- scripts generales -->
-    <%- include('template/scripts.ejs') %>
-    <script>
-        const productsClass = ['todos', 'niños', 'mujer','hombre','jóvenes'];
-        const boxProducts = document.querySelector('.box-products');
-        const products = <%- JSON.stringify(products) %>;
+        <!-- scripts generales -->
+        <%- include('template/scripts.ejs') %>
+            <script>
+                const productsClass = ['todos', 'niños', 'mujer', 'hombre', 'jóvenes'];
+                const boxProducts = document.querySelector('.box-products');
+                const products = products;
 
-        productsClass.forEach(productClass => {
-            let classId = document.querySelector(`.${productClass}`)
-            classId.addEventListener('click', ()=>{
-                console.log(productClass)
-                filterByClass(productClass)
-            })
-        });
+                productsClass.forEach(productClass => {
+                    let classId = document.querySelector(`.${productClass}`)
+                    classId.addEventListener('click', () => {
+                        console.log(productClass)
+                        filterByClass(productClass)
+                    })
+                });
 
-        function filterByClass(productClass){
-            boxProducts.innerHTML = ''; // Clear the box before appending new products
-            // Loop through the products and only display the ones in the 'niños' category
-            boxProducts.innerHTML = ''; // Clear the box before appending new products
-            if(productClass === 'todos'){
-                products.forEach(product => {
-                const productHTML = `
+                function filterByClass(productClass) {
+                    boxProducts.innerHTML = ''; // Clear the box before appending new products
+                    // Loop through the products and only display the ones in the 'niños' category
+                    boxProducts.innerHTML = ''; // Clear the box before appending new products
+                    if (productClass === 'todos') {
+                        products.forEach(product => {
+                            const productHTML = `
                     <div class="boxProductGallery">                   
                         <div class="productGalleryImg">
                             <img src="${product.productImagen}" alt="Gafas Mocatto recomendadas" class="card-img-top">
@@ -87,12 +94,12 @@
                         </div>
                     </div>
                 </div>`;
-                boxProducts.innerHTML += productHTML; // Append the product HTML to the box
-            }); 
-            }else {
-                products.forEach(product =>{
-                    if(product.productCategory === productClass){
-                        const productHTML = `
+                            boxProducts.innerHTML += productHTML; // Append the product HTML to the box
+                        });
+                    } else {
+                        products.forEach(product => {
+                            if (product.productCategory === productClass) {
+                                const productHTML = `
                     <div class="boxProductGallery">                   
                         <div class="productGalleryImg">
                             <img src="${product.productImagen}" alt="Gafas Mocatto recomendadas" class="card-img-top">
@@ -113,21 +120,22 @@
                         </div>
                     </div>
                 </div>`;
-                boxProducts.innerHTML += productHTML; // Append the product HTML to the box
+                                boxProducts.innerHTML += productHTML; // Append the product HTML to the box
 
 
+
+                            }
+                        })
 
                     }
-                })
+                }
 
-            }
-        }
-      
-          
-             
 
-    
-    </script>
-    
-</body>
+
+
+
+            </script>
+
+    </body>
+
 </html>
